@@ -1,0 +1,55 @@
+<div
+  class="max-w-md mx-auto mt-10 p-6 bg-white rounded-xl shadow-lg text-center"
+>
+  <h2 class="text-2xl font-bold mb-6">Générateur de QR Code</h2>
+
+  <input
+    [(ngModel)]="text"
+    (ngModelChange)="generateQR()"
+    placeholder="Texte ou URL"
+    class="w-full p-2 mb-4 border rounded focus:ring-2 focus:ring-blue-400"
+  />
+
+  <div class="flex justify-center gap-4 mb-4">
+    <div>
+      <label class="text-sm font-medium">Couleur QR</label>
+      <input
+        type="color"
+        [(ngModel)]="darkColor"
+        (ngModelChange)="generateQR()"
+        class="w-16 h-8"
+      />
+    </div>
+
+    <div>
+      <label class="text-sm font-medium">Couleur fond</label>
+      <input
+        type="color"
+        [(ngModel)]="lightColor"
+        (ngModelChange)="generateQR()"
+        class="w-16 h-8"
+      />
+    </div>
+
+    <div>
+      <label class="text-sm font-medium">Taille</label>
+      <input
+        type="number"
+        [(ngModel)]="qrWidth"
+        (ngModelChange)="generateQR()"
+        min="100"
+        max="500"
+        class="w-20 p-1 border rounded"
+      />
+    </div>
+  </div>
+  <canvas class="mx-auto border p-2 bg-gray-50"></canvas>
+  <div class="flex justify-center gap-3 mb-4 flex-wrap mt-5">
+    <button
+      (click)="downloadQR()"
+      class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded shadow"
+    >
+      Télécharger
+    </button>
+  </div>
+</div>
