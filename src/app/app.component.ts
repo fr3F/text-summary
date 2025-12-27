@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { QrcodeComponent } from './features/qrCode/qrcode.component';
+import { TitreComponent } from './features/titre/titre.component';
+import { SlideComponent } from './features/slide/slide.component';
+import { FooterComponent } from './features/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [QrcodeComponent],
+  imports: [TitreComponent, SlideComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

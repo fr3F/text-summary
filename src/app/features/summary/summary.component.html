@@ -1,0 +1,55 @@
+<main class="flex flex-col items-center justify-center">
+  <section class="w-full max-w-3xl shadow-xl p-6 sm:p-8mx-auto">
+    <!-- Header -->
+    <div class="mb-6 text-center">
+      <div class="p-6 rounded-xl mb-4">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+          Text Summarizer
+        </h2>
+      </div>
+      <p class="text-gray-900 text-sm sm:text-base mt-1">
+        Paste your text and get a concise summary instantly
+      </p>
+    </div>
+
+    <!-- Textarea -->
+    <div class="mb-4">
+      <textarea
+        class="w-full h-48 resize-none rounded-xl bg-slate-900 border border-yellow-700 p-4 text-yellow-100 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+        [value]="text()"
+        (input)="onInput($event)"
+        placeholder="Paste your text here..."
+      ></textarea>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-3">
+      <button
+        (click)="summarize()"
+        class="flex-1 text-lg sm:text-xl bg-yellow-500 hover:bg-yellow-600 text-slate-900 py-3 rounded-xl font-semibold transition"
+      >
+        Summarize
+      </button>
+
+      <button
+        (click)="clear()"
+        class="flex-1 text-lg sm:text-xl bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-xl font-semibold transition"
+      >
+        Clear
+      </button>
+    </div>
+
+    <!-- Result -->
+    <div
+      *ngIf="summary()"
+      class="mt-6 border-t border-yellow-700 pt-4 bg-slate-800 p-4 rounded-xl"
+    >
+      <h3 class="text-yellow-400 mb-2 font-semibold text-lg sm:text-xl">
+        Summary
+      </h3>
+      <p class="text-yellow-200 text-sm sm:text-base leading-relaxed">
+        {{ summary() }}
+      </p>
+    </div>
+  </section>
+</main>
