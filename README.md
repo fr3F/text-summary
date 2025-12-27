@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Kotrana
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
@@ -29,3 +30,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 =======
 # gerer_qrcode
 >>>>>>> 146119afeafe0fe2cde4ee14287f6e059dc53c41
+=======
+# text-summary
+>>>>>>> 762764bdf11564f759544ad3759a259d8d383700
